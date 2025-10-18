@@ -85,168 +85,193 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
+      body: Padding(
+        padding: const EdgeInsets.all(24),
         child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Center(
-              // Center is a layout widget. It takes a single child and positions it
-              // in the middle of the parent.
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Text(
-                    '1(Columna basica',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(12),
-                    color: Colors.grey.shade200,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: const [
+                CircleAvatar(
+                  backgroundColor: Colors.deepPurple,
+                  child: Icon(Icons.insights, color: Colors.white),
+                ),
+                SizedBox(width: 16),
+                Text(
+                  'Snippets Dashboard',
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(width: 16),
+                Icon(Icons.notifications_none),
+              ],
+            ),
+            const SizedBox(height: 32),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: Container(
+                    padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      color: Colors.deepPurpleAccent,
+                      borderRadius: BorderRadius.circular(16),
+                    ),
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('A'),
-                        SizedBox(height: 12),
-                        Text('B'),
-                        SizedBox(height: 12),
-                        Text('C'),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 24),
-                  const Text(
-                    '2) Row con espacios',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
-                  const SizedBox(height: 8),
-                  Container(
-                    padding: const EdgeInsets.all(12),
-                    color: Colors.grey.shade200,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: const [
-                        Icon(Icons.home),
-                        Icon(Icons.favorite),
-                        Icon(Icons.person),
+                        Text(
+                          'Tareas',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        SizedBox(height: 8),
+                        Text(
+                          '12 pendientes',
+                          style: TextStyle(color: Colors.white70),
+                        ),
                       ],
                     ),
                   ),
-                  const SizedBox(height: 24),
-                  const Text(
-                    '3) Expanded & flex (proporciones)',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
-                  const SizedBox(height: 8),
-                  Row(
-                    children: [
-                      Expanded(
-                        flex: 2,
-                        child: Container(
-                          height: 40,
-                          color: Colors.blue,
-                          alignment: Alignment.center,
-                          child: const Text(
-                            'flex:2',
-                            style: TextStyle(color: Colors.white),
+                ),
+                const SizedBox(width: 16),
+                Expanded(
+                  child: Container(
+                    padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      color: Colors.teal,
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text(
+                          'Progreso',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
                           ),
                         ),
-                      ),
-                      const SizedBox(width: 8),
-                      Expanded(
-                        flex: 1,
-                        child: Container(
-                          height: 40,
-                          color: Colors.green,
-                          alignment: Alignment.center,
-                          child: const Text(
-                            'flex:1',
-                            style: TextStyle(color: Colors.white),
+                        SizedBox(height: 8),
+                        Text(
+                          '65% completado',
+                          style: TextStyle(color: Colors.white70),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 16),
+                Expanded(
+                  child: Container(
+                    padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      color: Colors.orangeAccent,
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text(
+                          'Eventos',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
                           ),
                         ),
+                        SizedBox(height: 8),
+                        Text(
+                          '3 próximos',
+                          style: TextStyle(color: Colors.white70),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 32),
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Container(
+                  height: 140,
+                  padding: const EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(24),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.05),
+                        blurRadius: 10,
+                        offset: const Offset(0, 6),
                       ),
                     ],
                   ),
-
-                  const SizedBox(height: 24),
-                  const Text(
-                    '4) crossAxisAlignment.stretch en Column',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
-                  const SizedBox(height: 8),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Container(
-                        height: 36,
-                        color: Colors.orange,
-                        alignment: Alignment.center,
-                        child: const Text('Ancho estirado'),
-                      ),
-                      const SizedBox(height: 8),
-                      Container(
-                        height: 36,
-                        color: Colors.orange,
-                        alignment: Alignment.center,
-                        child: const Text('Ancho estirado'),
-                      ),
-                    ],
-                  ),
-
-                  const SizedBox(height: 24),
-                  const Text(
-                    '5) Baseline (solo Row con textos)',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
-                  const SizedBox(height: 8),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.baseline,
-                    textBaseline:
-                        TextBaseline.alphabetic, // obligatorio con baseline
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: const [
-                      Text('Texto base', style: TextStyle(fontSize: 20)),
-                      SizedBox(width: 12),
-                      Text('más chico', style: TextStyle(fontSize: 14)),
-                      SizedBox(width: 12),
-                      Text('MÁS GRANDE', style: TextStyle(fontSize: 28)),
-                    ],
-                  ),
-
-                  const SizedBox(height: 24),
-                  const Text(
-                    '6) Row con texto largo (evitar overflow)',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
-                  const SizedBox(height: 8),
-                  Row(
-                    children: const [
-                      Icon(Icons.info),
-                      SizedBox(width: 8),
-                      Expanded(
-                        // permite que el texto se ajuste y haga wrap
-                        child: Text(
-                          'Este es un texto largo que podría pasar el ancho de pantalla. Con Expanded evitamos el RenderFlex overflow.',
+                      Text(
+                        'Actividad Reciente',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
+                      SizedBox(height: 12),
+                      Text(
+                        'Consulta las actualizaciones de tu equipo y mantente al día.',
+                      ),
                     ],
                   ),
-                ],
-              ),
+                ),
+                const SizedBox(height: 24),
+                Container(
+                  height: 140,
+                  padding: const EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(24),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.05),
+                        blurRadius: 10,
+                        offset: const Offset(0, 6),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Text(
+                        'Estadísticas del Día',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: 12),
+                      Text(
+                        'Revisa métricas clave y analiza el rendimiento general.',
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
           ],
         ),
